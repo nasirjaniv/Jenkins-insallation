@@ -1,0 +1,68 @@
+#!/user/bin/evn bash
+
+echo"
+------------------------
+setting up openjdk-8-djk for app
+------------------------
+"
+echo"
+------------------------
+cloning openjdk-8-djk sources
+------------------------
+"
+-------------------------------
+installing openjdk-8-djk
+-------------------------------
+"
+ 
+sudo apt-get install openjdk-8-jdk
+ 
+"
+echo"
+------------------------------
+openjdk-8-djk version
+-----------------------------
+"
+
+jdk -v
+
+echo"
+----------------------------
+installing jenkins
+---------------------------
+"
+ 
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+
+
+ 
+
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+ 
+echo"
+---------------------------
+update
+---------------------------
+"
+
+sudo apt-get update
+
+
+"echo
+-----------------------------
+installing jenkins
+-----------------------------
+"
+sudo apt-get install jenkins
+
+
+echo"
+---------------------------
+Success
+---------------------------
+"
+
+
+
+
+
