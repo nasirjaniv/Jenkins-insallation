@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+echo "
+----------------------
+update
+----------------------
+"
+sudo apt-get update
+
+echo "
+----------------------
+install jdk
+----------------------
+"
+
+sudo apt install default-jdk -y
+
+echo "
+----------------------
+stable debian version
+----------------------
+"
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+echo "
+----------------------
+stable binary package
+----------------------
+"
+
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+echo "
+----------------------
+update
+----------------------
+"
+
+sudo apt-get update
+
+echo "
+----------------------
+install jenkins
+----------------------
+"
+
+sudo apt-get install jenkins -y
+
+echo "
+----------------------
+Printing java version
+----------------------
+"
+java -version
+
+echo "
+----------------------
+Successfully installed!!!
+----------------------
+"
